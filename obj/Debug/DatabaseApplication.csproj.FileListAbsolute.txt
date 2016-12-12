@@ -1,0 +1,9 @@
+c:\users\greta\documents\visual studio 2015\Projects\DatabaseApplication\DatabaseApplication\bin\Debug\DatabaseApplication.exe.config
+c:\users\greta\documents\visual studio 2015\Projects\DatabaseApplication\DatabaseApplication\bin\Debug\DatabaseApplication.exe
+c:\users\greta\documents\visual studio 2015\Projects\DatabaseApplication\DatabaseApplication\bin\Debug\DatabaseApplication.pdb
+c:\users\greta\documents\visual studio 2015\Projects\DatabaseApplication\DatabaseApplication\obj\Debug\DatabaseApplication.csprojResolveAssemblyReference.cache
+c:\users\greta\documents\visual studio 2015\Projects\DatabaseApplication\DatabaseApplication\obj\Debug\DatabaseApplication.StartForm.resources
+c:\users\greta\documents\visual studio 2015\Projects\DatabaseApplication\DatabaseApplication\obj\Debug\DatabaseApplication.Properties.Resources.resources
+c:\users\greta\documents\visual studio 2015\Projects\DatabaseApplication\DatabaseApplication\obj\Debug\DatabaseApplication.csproj.GenerateResource.Cache
+c:\users\greta\documents\visual studio 2015\Projects\DatabaseApplication\DatabaseApplication\obj\Debug\DatabaseApplication.exe
+c:\users\greta\documents\visual studio 2015\Projects\DatabaseApplication\DatabaseApplication\obj\Debug\DatabaseApplication.pdb
