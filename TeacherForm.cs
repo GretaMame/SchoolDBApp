@@ -16,5 +16,20 @@ namespace DatabaseApplication
         {
             InitializeComponent();
         }
+
+        private void pupilsButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void insertGradesButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void editGradesButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

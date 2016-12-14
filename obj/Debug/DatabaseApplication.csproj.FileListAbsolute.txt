@@ -7,3 +7,13 @@ c:\users\greta\documents\visual studio 2015\Projects\DatabaseApplication\Databas
 c:\users\greta\documents\visual studio 2015\Projects\DatabaseApplication\DatabaseApplication\obj\Debug\DatabaseApplication.csproj.GenerateResource.Cache
 c:\users\greta\documents\visual studio 2015\Projects\DatabaseApplication\DatabaseApplication\obj\Debug\DatabaseApplication.exe
 c:\users\greta\documents\visual studio 2015\Projects\DatabaseApplication\DatabaseApplication\obj\Debug\DatabaseApplication.pdb
+c:\users\greta\documents\visual studio 2015\Projects\DatabaseApplication\DatabaseApplication\bin\Debug\EntityFramework.dll
+c:\users\greta\documents\visual studio 2015\Projects\DatabaseApplication\DatabaseApplication\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\greta\documents\visual studio 2015\Projects\DatabaseApplication\DatabaseApplication\bin\Debug\EntityFramework.xml
+c:\users\greta\documents\visual studio 2015\Projects\DatabaseApplication\DatabaseApplication\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\greta\documents\visual studio 2015\Projects\DatabaseApplication\DatabaseApplication\obj\Debug\DatabaseApplication.AdministrationForm.resources
+c:\users\greta\documents\visual studio 2015\Projects\DatabaseApplication\DatabaseApplication\obj\Debug\DatabaseApplication.AdministrationStudentsForm.resources
+c:\users\greta\documents\visual studio 2015\Projects\DatabaseApplication\DatabaseApplication\obj\Debug\DatabaseApplication.StudentForm.resources
+c:\users\greta\documents\visual studio 2015\Projects\DatabaseApplication\DatabaseApplication\obj\Debug\DatabaseApplication.TeacherForm.resources
+c:\users\greta\documents\visual studio 2015\Projects\DatabaseApplication\DatabaseApplication\obj\Debug\DatabaseApplication.AdministrationClassesForm.resources
+C:\Users\Greta\Documents\Visual Studio 2015\Projects\DatabaseApplication\DatabaseApplication\obj\Debug\DatabaseApplication.PromptDialog.resources

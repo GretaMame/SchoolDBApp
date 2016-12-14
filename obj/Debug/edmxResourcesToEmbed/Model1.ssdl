@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SchoolDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Class">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="Name" Type="nchar" MaxLength="2" Nullable="false" />
+    <Property Name="Tutor" Type="int" />
+  </EntityType>
+  <EntityType Name="ClassSubject">
+    <Key>
+      <PropertyRef Name="Class" />
+      <PropertyRef Name="Subject ID" />
+    </Key>
+    <Property Name="Class" Type="nchar" MaxLength="2" Nullable="false" />
+    <Property Name="Subject ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="char" MaxLength="15" Nullable="false" />
+    <Property Name="Surname" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="Class" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="Parent name" Type="char" MaxLength="15" Nullable="false" />
+    <Property Name="Parent surname" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="Phone number" Type="char" MaxLength="12" Nullable="false" />
+    <Property Name="Street" Type="char" MaxLength="15" Nullable="false" />
+    <Property Name="House no." Type="int" Nullable="false" />
+    <Property Name="Apartment no." Type="int" />
+  </EntityType>
+  <EntityType Name="StudentSubject">
+    <Key>
+      <PropertyRef Name="Student ID" />
+      <PropertyRef Name="Subject ID" />
+    </Key>
+    <Property Name="Student ID" Type="int" Nullable="false" />
+    <Property Name="Subject ID" Type="int" Nullable="false" />
+    <Property Name="Grade" Type="smallint" />
+  </EntityType>
+  <EntityType Name="Subject">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="char" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Teacher">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Surname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Phone number" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Education" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Qualification" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TeacherSubject">
+    <Key>
+      <PropertyRef Name="Teacher ID" />
+      <PropertyRef Name="Subject ID" />
+    </Key>
+    <Property Name="Teacher ID" Type="int" Nullable="false" />
+    <Property Name="Subject ID" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SchoolDB.dbo.StudentsInClassAmount' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="StudentsInClassAmount">
+    <Key>
+      <PropertyRef Name="Class" />
+    </Key>
+    <Property Name="Class" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="Amount of students" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SchoolDB.dbo.Tutors' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Tutors">
+    <Key>
+      <PropertyRef Name="Class" />
+    </Key>
+    <Property Name="Tutor" Type="int" />
+    <Property Name="Class" Type="nchar" MaxLength="2" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Class__Tutor__1CBC4616">
+    <End Role="Teacher" Type="Self.Teacher" Multiplicity="0..1" />
+    <End Role="Class" Type="Self.Class" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teacher">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Class">
+        <PropertyRef Name="Tutor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClassSubject_ToSubject">
+    <End Role="Subject" Type="Self.Subject" Multiplicity="1" />
+    <End Role="ClassSubject" Type="Self.ClassSubject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subject">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ClassSubject">
+        <PropertyRef Name="Subject ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentSubject_ToStudent">
+    <End Role="Student" Type="Self.Student" Multiplicity="1" />
+    <End Role="StudentSubject" Type="Self.StudentSubject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StudentSubject">
+        <PropertyRef Name="Student ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentSubject_ToSubject">
+    <End Role="Subject" Type="Self.Subject" Multiplicity="1" />
+    <End Role="StudentSubject" Type="Self.StudentSubject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subject">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StudentSubject">
+        <PropertyRef Name="Subject ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TeacherSubject_ToSubject">
+    <End Role="Subject" Type="Self.Subject" Multiplicity="1" />
+    <End Role="TeacherSubject" Type="Self.TeacherSubject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subject">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TeacherSubject">
+        <PropertyRef Name="Subject ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TeacherSubject_ToTeacher">
+    <End Role="Teacher" Type="Self.Teacher" Multiplicity="1" />
+    <End Role="TeacherSubject" Type="Self.TeacherSubject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teacher">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TeacherSubject">
+        <PropertyRef Name="Teacher ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SchoolDBModelStoreContainer">
+    <EntitySet Name="Class" EntityType="Self.Class" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClassSubject" EntityType="Self.ClassSubject" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StudentSubject" EntityType="Self.StudentSubject" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Subject" EntityType="Self.Subject" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Teacher" EntityType="Self.Teacher" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TeacherSubject" EntityType="Self.TeacherSubject" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StudentsInClassAmount" EntityType="Self.StudentsInClassAmount" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [StudentsInClassAmount].[Class] AS [Class], 
+    [StudentsInClassAmount].[Amount of students] AS [Amount of students]
+    FROM [dbo].[StudentsInClassAmount] AS [StudentsInClassAmount]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Tutors" EntityType="Self.Tutors" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Tutors].[Tutor] AS [Tutor], 
+    [Tutors].[Class] AS [Class]
+    FROM [dbo].[Tutors] AS [Tutors]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__Class__Tutor__1CBC4616" Association="Self.FK__Class__Tutor__1CBC4616">
+      <End Role="Teacher" EntitySet="Teacher" />
+      <End Role="Class" EntitySet="Class" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClassSubject_ToSubject" Association="Self.FK_ClassSubject_ToSubject">
+      <End Role="Subject" EntitySet="Subject" />
+      <End Role="ClassSubject" EntitySet="ClassSubject" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentSubject_ToStudent" Association="Self.FK_StudentSubject_ToStudent">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="StudentSubject" EntitySet="StudentSubject" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentSubject_ToSubject" Association="Self.FK_StudentSubject_ToSubject">
+      <End Role="Subject" EntitySet="Subject" />
+      <End Role="StudentSubject" EntitySet="StudentSubject" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TeacherSubject_ToSubject" Association="Self.FK_TeacherSubject_ToSubject">
+      <End Role="Subject" EntitySet="Subject" />
+      <End Role="TeacherSubject" EntitySet="TeacherSubject" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TeacherSubject_ToTeacher" Association="Self.FK_TeacherSubject_ToTeacher">
+      <End Role="Teacher" EntitySet="Teacher" />
+      <End Role="TeacherSubject" EntitySet="TeacherSubject" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -29,49 +29,52 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.editGradesButton = new System.Windows.Forms.Button();
+            this.insertGradesButton = new System.Windows.Forms.Button();
+            this.pupilsButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.editGradesButton);
+            this.groupBox1.Controls.Add(this.insertGradesButton);
+            this.groupBox1.Controls.Add(this.pupilsButton);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(260, 237);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // button1
+            // editGradesButton
             // 
-            this.button1.Location = new System.Drawing.Point(58, 31);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(164, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Peržiūrėti auklėtinių duomenis";
-            this.button1.UseVisualStyleBackColor = true;
+            this.editGradesButton.Location = new System.Drawing.Point(58, 117);
+            this.editGradesButton.Name = "editGradesButton";
+            this.editGradesButton.Size = new System.Drawing.Size(164, 23);
+            this.editGradesButton.TabIndex = 2;
+            this.editGradesButton.Text = "Redaguoti pažymius";
+            this.editGradesButton.UseVisualStyleBackColor = true;
+            this.editGradesButton.Click += new System.EventHandler(this.editGradesButton_Click);
             // 
-            // button2
+            // insertGradesButton
             // 
-            this.button2.Location = new System.Drawing.Point(58, 72);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(164, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Įvesti pažymius";
-            this.button2.UseVisualStyleBackColor = true;
+            this.insertGradesButton.Location = new System.Drawing.Point(58, 72);
+            this.insertGradesButton.Name = "insertGradesButton";
+            this.insertGradesButton.Size = new System.Drawing.Size(164, 23);
+            this.insertGradesButton.TabIndex = 1;
+            this.insertGradesButton.Text = "Įvesti pažymius";
+            this.insertGradesButton.UseVisualStyleBackColor = true;
+            this.insertGradesButton.Click += new System.EventHandler(this.insertGradesButton_Click);
             // 
-            // button3
+            // pupilsButton
             // 
-            this.button3.Location = new System.Drawing.Point(58, 117);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(164, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Redaguoti pažymius";
-            this.button3.UseVisualStyleBackColor = true;
+            this.pupilsButton.Location = new System.Drawing.Point(58, 30);
+            this.pupilsButton.Name = "pupilsButton";
+            this.pupilsButton.Size = new System.Drawing.Size(164, 23);
+            this.pupilsButton.TabIndex = 0;
+            this.pupilsButton.Text = "Peržiūrėti auklėtinių duomenis";
+            this.pupilsButton.UseVisualStyleBackColor = true;
+            this.pupilsButton.Click += new System.EventHandler(this.pupilsButton_Click);
             // 
             // TeacherForm
             // 
@@ -91,8 +94,8 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button editGradesButton;
+        private System.Windows.Forms.Button insertGradesButton;
+        private System.Windows.Forms.Button pupilsButton;
     }
 }
